@@ -3,7 +3,8 @@
 using AOC2018;
 
 
-var input = "";
+var fileReader = new FileReader();
+var input = fileReader.ReadFile("../../../../Inputs/Input1.txt");
 var dev = new Device();
-dev.Calibrate(input);
-Console.WriteLine();
+var result = dev.Calibrate(input);
+Console.WriteLine(result);

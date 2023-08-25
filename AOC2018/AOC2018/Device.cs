@@ -10,4 +10,9 @@ public class Device
 
         return result;
     }
+
+    public int[] GetRecordedFrequences()
+    {
+        throw new NotImplementedException();
+    }
 }
