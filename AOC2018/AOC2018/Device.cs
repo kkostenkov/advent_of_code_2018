@@ -2,22 +2,38 @@ namespace AOC2018;
 
 public class Device
 {
-    private int[] visitedFrequencies;
+    private int? firstDuplicatedFreq;
         
     public int Calibrate(string calibrationData)
     {
         var parser = new CalibrationDataParser();
         var numbers = parser.Parse(calibrationData);
 
-        visitedFrequencies = numbers;
-        
-        var result = numbers.Sum();
+        var result = SumFrequecies(numbers);
 
         return result;
     }
 
-    public int GetFirstDuplicatedFrequency()
+    private int SumFrequecies(int[] numbers)
     {
-        return 0;
+        var result = 0;
+        var hashedFreqs = new HashSet<int>();
+        foreach (var number in numbers) {
+            result += number;
+            if (firstDuplicatedFreq == null) {
+                if (hashedFreqs.Contains(number)) {
+                    firstDuplicatedFreq = number;
+                }
+                else {
+                    hashedFreqs.Add(number);
+                }
+            }
+        }
+        return result;
+    }
+
+    public int? GetFirstDuplicatedFrequency()
+    {
+        return firstDuplicatedFreq;
     }
 }
