@@ -23,6 +23,18 @@ public class FrequencyCalculator
 
     public int FindFirstFrequencyDuplication(int[] input)
     {
-        
+        var freq = 0;
+        var known = new HashSet<int>();
+        while (true) {
+            for (int i = 0; i < input.Length; i++) {
+                var num = input[i];
+                freq += num;
+                if (known.Contains(freq)) {
+                    return freq;
+                }
+                known.Add(freq);
+            }
+        }
+        return int.MinValue;
     }
 }
