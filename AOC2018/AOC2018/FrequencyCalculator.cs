@@ -14,9 +14,10 @@ public class FrequencyCalculator
 
     public int Calculate(string input)
     {
-        return 0;
-        if (string.IsNullOrEmpty(input))
-        {}
-        
+        if (string.IsNullOrEmpty(input)) {
+            return 0;
+        }
+        var numbers = input.Split("\n").Select(int.Parse).ToArray();
+        return Calculate(numbers);
     }
 }

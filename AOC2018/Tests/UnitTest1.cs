@@ -2,6 +2,8 @@ namespace Tests;
 
 public class Tests
 {
+    private readonly FileReaderTest fileReaderTest = new FileReaderTest();
+
     [TestCase(new[] { 1, 1, 1 }, ExpectedResult = 3)]
     [TestCase(new[] { -1, -2, -3 }, ExpectedResult = -6)]
     public int Should_CalculateSum_When_OnInput(int[] input)
@@ -23,6 +25,7 @@ public class Tests
     }
 
     [TestCase("1\n1\n1", ExpectedResult = 3)]
+    [TestCase("-1\n-2\n-3", ExpectedResult = -6)]
     [TestCase(null, ExpectedResult = 0)]
     [TestCase("", ExpectedResult = 0)]
     public int Should_CalculateSum_When_GivenStringInput(string input)
