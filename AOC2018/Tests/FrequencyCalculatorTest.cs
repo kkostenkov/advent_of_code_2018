@@ -1,6 +1,6 @@
 namespace Tests;
 
-public class Tests
+public class FrequencyCalculatorTest
 {
     private readonly FileReaderTest fileReaderTest = new FileReaderTest();
 

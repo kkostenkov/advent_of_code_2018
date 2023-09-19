@@ -1,5 +1,3 @@
-using Newtonsoft.Json;
-
 namespace Tests;
 
 public class FileReaderTest
@@ -17,7 +15,7 @@ public class FrequencyFileReader
 {
     public string Read(string path)
     {
-        var result = File.ReadAllText(path);
+        var result = File.ReadAllText("../../../../" + path);
         return result;
     }
 }
