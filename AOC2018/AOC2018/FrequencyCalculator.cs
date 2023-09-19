@@ -20,4 +20,9 @@ public class FrequencyCalculator
         var numbers = input.Split("\n").Select(int.Parse).ToArray();
         return Calculate(numbers);
     }
+
+    public int FindFirstFrequencyDuplication(int[] input)
+    {
+        
+    }
 }
